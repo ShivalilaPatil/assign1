@@ -1,0 +1,106 @@
+.mycalc {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  border-radius: 10px;
+  background-color: purple;
+}
+
+.all-btn {
+  display: flex;
+}
+
+.all-btn-numbers {
+  display: flex;
+  width: 210px;
+  flex-wrap: wrap;
+}
+
+.all-btn-signs {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-btn-numbers button {
+  background-color: white;
+  border: none;
+  margin: 10px;
+  color: red;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-btn-signs button {
+  background-color: rgb(240, 240, 65);
+  border: none;
+  margin: 10px;
+  color: black;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-btn-signs button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 5px rgb(223, 223, 217);
+}
+
+.all-btn-numbers button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 5px rgb(223, 223, 217);
+}
+
+.btn-extra {
+  display: flex;
+}
+
+.btn-extra button {
+  background-color: rgb(240, 240, 65);
+  border: none;
+  align-items: center;
+  color: black;
+}
+
+.btn-extra button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 5px rgb(223, 223, 217);
+}
+
+.btn-clear-equals {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.btn-clear-equals button {
+  width: 120px;
+  font-size: 30px;
+  padding: 5px;
+  margin: 10px 5px;
+  border: none;
+}
+
+.btn-clear-equals button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 5px rgb(223, 223, 217);
+}
+
+input {
+  width: 80%;
+  margin: 10px 0px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+input:focus {
+  outline: none;
+}
