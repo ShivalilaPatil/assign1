@@ -1,4 +1,6 @@
 <!-- <p>calcu works!</p> -->
+
+<!-- calculator Project-->
 <div class="mycalc">
   <input
     #box
@@ -33,5 +35,35 @@
   <div class="btn-clear-equals">
     <button id="clear" (click)="clear()">AC</button>
     <button id="equals" (click)="equals()">=</button>
+  </div>
+</div>
+
+<!--currency converter-->
+
+<div class="main-container">
+  <div class="selection-cont">
+    <select #c1 name="" id="country1" (mouseleave)="changebase(c1.value)">
+      <option value="USD">US Doller</option>
+      <option value="INR">Indian Rupee</option>
+      <option value="EUR">Euro</option>
+      <option value="JPY">Japanese Yen</option>
+      <option value="AUD">Australian Dollar</option>
+      <option value="GBP">Great British Pound</option>
+    </select>
+    <p>to</p>
+    <select #c2 name="" id="country1" (mouseleave)="tocountry(c2.value)">
+      <option value="USD">US Doller</option>
+      <option value="INR">Indian Rupee</option>
+      <option value="EUR">Euro</option>
+      <option value="JPY">Japanese Yen</option>
+      <option value="AUD">Australian Dollar</option>
+      <option value="GBP">Great British Pound</option>
+    </select>
+  </div>
+  <button (click)="convert()">Submit</button>
+  <div class="result-cont">
+    <p>1 {{ base }}</p>
+    <p>=</p>
+    <p>{{ result }} {{ cont2 }}</p>
   </div>
 </div>

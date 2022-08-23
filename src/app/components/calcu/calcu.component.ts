@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrencyApiDataService } from 'src/app/currency-api-data.service';
 
 @Component({
   selector: 'app-calcu',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calcu.component.css'],
 })
 export class CalcuComponent implements OnInit {
+  // **************  calculator     ************
   toshow = '0';
   currvalue = '';
   writetoinput(value: string) {
@@ -38,15 +40,48 @@ export class CalcuComponent implements OnInit {
     this.toshow = eval(solve);
   }
 
-  constructor() {}
+  //******** currency converter **********
 
+  currjson: any = [];
+  base = 'USD';
+  cont2 = 'USD';
+  result: string = '1';
+
+  changebase(a: string) {
+    this.base = a;
+  }
+
+  tocountry(b: string) {
+    this.cont2 = b;
+  }
+
+  constructor(private currency: CurrencyApiDataService) {}
+
+  convert() {
+    this.currency.getcurrencydata(this.base).subscribe((data) => {
+      this.currjson = JSON.stringify(data);
+      this.currjson = JSON.parse(this.currjson);
+      console.log(this.currjson);
+
+      if (this.cont2 == 'USD') {
+        this.result = this.currjson.rates.USD;
+      }
+      if (this.cont2 == 'INR') {
+        this.result = this.currjson.rates.INR;
+      }
+      if (this.cont2 == 'EUR') {
+        this.result = this.currjson.rates.EUR;
+      }
+      if (this.cont2 == 'JPY') {
+        this.result = this.currjson.rates.JPY;
+      }
+      if (this.cont2 == 'AUD') {
+        this.result = this.currjson.rates.AUD;
+      }
+      if (this.cont2 == 'GBP') {
+        this.result = this.currjson.rates.GBP;
+      }
+    });
+  }
   ngOnInit(): void {}
 }
-// export class CalcuComponent {
-//   toshow = '0';
-//   currvalue = '';
-//   writetoinput(value: string) {
-//     this.currvalue = this.currvalue + value;
-//     this.toshow = this.currvalue;
-//   }
-// }
